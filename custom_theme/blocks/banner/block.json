@@ -1,0 +1,22 @@
+{
+    "apiVersion": 2,
+    "name": "acf/banner",
+    "title": "Banner",
+    "description": "Banner principal para las páginas del sitio",
+    "category": "design",
+    "icon": "cover-image",
+    "keywords": [
+        "banner",
+        "hero",
+        "cabecera"
+    ],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "render.php"
+    },
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "multiple": true
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "apiVersion": 2,
+    "name": "acf/informacion-general",
+    "title": "Información General",
+    "description": "Sección de información general",
+    "category": "design",
+    "icon": "align-pull-left",
+    "keywords": [
+        "informacion",
+        "contenido",
+        "texto"
+    ],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "render.php"
+    },
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "multiple": true
+    }
+}

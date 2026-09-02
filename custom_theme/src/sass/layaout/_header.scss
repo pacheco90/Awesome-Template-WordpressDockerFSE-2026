@@ -1,0 +1,512 @@
+header {
+    padding: 20px 0; 
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: transparent;
+    // backdrop-filter: blur(5px);
+    // box-shadow: 0 0 0.5em rgba(#222, 0.3);
+    // background: linear-gradient( .25turn, rgba(#000, 0.1), transparent);
+    background: #fff;
+    // background: #000;
+    transition: all 0.3s;
+
+
+    &.reduce_header{
+        background:#fff;
+        padding: 10px 0;
+
+        .container{
+            nav{
+                ul{
+                    li{
+                        a{
+                            color: #000;
+
+                            @media( max-width: 1440px ) {
+                                color: #fff;
+                            }
+                        }
+
+                        ul{
+                            background: $blue2;
+
+                            @media (max-width: 1440px) {
+                                background: $blue;
+
+                                li{
+                                    ul{
+                                        background: $blue2;
+                                    }
+                                }
+
+                            }
+
+                            li{
+                                a{
+                                    color: #fff;
+                                }
+
+                                &:has(>ul) > a:after {
+                                    color: #fff !important;
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+                    
+        img {
+            max-width: 75px;
+            height: auto;
+
+            @media( max-width: 1440px ) {
+                max-width: 70px;
+            }
+        }
+        
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @media (max-width:1440px) {
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+            }
+
+            &.show{
+                .close-menu{
+                    display: block;
+                }
+            }
+
+            .close-menu {
+                color: $green;
+                display: none;
+
+                @media( max-width: 1440px ) {
+                    display: block;
+                }
+                
+                svg {
+                    width: 30px;
+                }
+            }
+
+            ul {
+                display: flex;
+                list-style: none;
+            
+                li {
+                    padding: 0 10px;
+                    position: relative;
+            
+                    a {
+                        padding: 5px;
+                        font-family: $primary-font;
+                        color: #000;
+                        position: relative;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        font-size: 14px;
+                        padding-right: 15px;
+
+                        @media(max-width: 1440px) {
+                            font-size: 12px;
+                        }
+            
+                        &:before {
+                            content: "";
+                            width: 0%;
+                            left: 50%;
+                            height: 0;
+                            border-bottom: 2px solid $green;
+                            position: absolute;
+                            bottom: 0px;
+                            transition: all 0.4s;
+                            z-index: 100;
+                        }
+            
+                        &:after {
+                            content: "⌄";
+                            position: absolute;
+                            right: 0;
+                            top: 50%;
+                            transform: translateY(-70%);
+                            font-weight: 700;
+                            font-size: 15px;
+                            opacity: 0;
+                            pointer-events: none;
+                            transition: opacity 0.2s;
+                            color: #000;
+                            transition: all 0.2s;
+
+                            @media(max-width: 1440px) {
+                                color: #fff;
+                            }
+                        }
+            
+                        &:hover {
+                            &:before {
+                                width: 100%;
+                                left: 0;
+                            }
+                        }
+                    }
+            
+                    // &.current-menu-item {
+                    //     a {
+                    //         &:before {
+                    //             content: "";
+                    //             width: 100%;
+                    //             left: 0%;
+                    //             height: 0;
+                    //             border-bottom: 2px solid $green;
+                    //             position: absolute;
+                    //             bottom: -3px;
+                    //             transition: all 0.4s;
+                    //         }
+                    //     }
+                    // }
+            
+                    ul {
+                        position: absolute;
+                        left: 0;
+                        top: 140%;
+                        width: 350px;
+                        height: 0;
+                        overflow-y: clip;
+                        // overflow-x: hidden;
+                        display: flex;
+                        align-items: flex-start;
+                        justify-content: flex-start;
+                        flex-direction: column;
+                        gap: 15px;
+                        transition: all 0.3s ease-in;
+                        background: transparent;
+                        // backdrop-filter: blur(5px);
+                        // background: linear-gradient(.25turn, rgba(#000, 0.1), transparent);
+                        background: $blue2;
+                        transition: all 0.3s;
+            
+                        li {
+                            width: 100%;
+                            cursor: pointer;
+                            a {
+                                color: #fff;
+                            }
+
+                            &:has(>ul) > a:after {
+                                content: "▸";
+                                opacity: 1;
+                                color: #fff;
+                                transform: translateY(-49%) rotate(360deg) translateX(-194%) !important;
+                                transition: all 0.2s;
+                                right: -15px;
+                            }
+
+                            ul{
+                                opacity: 0;
+                                display: flex !important;
+                                align-items: flex-start !important;
+                                justify-content: center !important;
+                                flex-direction: column !important;
+                                // gap: 10px !important;
+                                max-width: 475px;
+                                width: 100%;
+
+                                &.open{
+                                    position: absolute;
+                                    left: 100%;
+                                    top: -20px;
+                                    // width: 540px;
+                                    min-height: 100%;
+                                    background: $blue;
+                                    display: block;
+                                    opacity: 1;
+                                    gap: 5px;
+                                    z-index: 10;
+
+                                    @media (max-width: 1440px) {
+                                        position: relative;
+                                    }
+                                }
+
+                                li{
+                                    width: auto;
+                                    a{
+                                        display: flex;
+                                    }
+                                }
+
+                                @media (max-width: 1440px) {
+                                    position: relative;
+                                    left: 0;
+                                    top: 0px;
+                                    // width: 540px;
+                                    min-height: 100%;
+                                    display: block;
+                                    opacity: 1;
+                                    gap: 5px;
+                                    background: $blue2;
+
+                                    li{
+                                        padding: 0;
+                                    }
+                                    &.open{
+                                        position: relative;
+                                        left: 0;
+                                        top: 0px;
+                                        // width: 540px;
+                                        min-height: 100%;
+                                        display: block;
+                                        opacity: 1;
+                                        gap: 5px;
+                                        background: $blue2;
+                                    }
+                                }
+                            }
+
+                            @media (max-width: 1440px) {
+                                &:has(>ul) > a:after {
+                                    display: none;
+                                }
+                            }
+
+                            &:nth-last-child(-n+3) {
+                                ul {
+                                  &.open {
+                                    top: auto;
+                                    bottom: -20px;
+                                  }
+
+                                  li{
+
+
+                                        a{
+                                            padding-left: auto;
+                                            margin-left: auto;
+                                        }
+                                  }
+                                }
+                            }
+                        }
+                    }
+            
+                    // SOLUCIÓN: Mostrar el icono cuando el li tiene un submenu (ul)
+                    &:has(>ul) > a:after {
+                        opacity: 1;
+                    }
+
+                    &:nth-last-child(-n+3){
+                        ul{
+                            left: auto;
+                            right: 0;
+                            
+                            li{
+                                display: flex;
+
+                                @media (max-width: 1440px) {
+                                    display: block;
+                                }
+
+                                // a{
+                                //     padding-left: 10px;
+                                //     margin-left: 25px;
+
+                                //     @media (max-width: 1440px) {
+                                //         padding-left: 0;
+                                //         margin-left: 0;
+                                //     }
+                                // }
+                                
+                                ul{
+                                    left: auto;
+                                    right: 100%;
+                                    align-items: flex-end !important;
+
+                                    li{
+                                        align-items: flex-end;
+
+                                        a{
+                                            text-align: right;
+
+                                            @media (max-width: 1440px) {
+                                                text-align: left;
+                                            }
+                                        }
+                                    }
+
+                                    @media (max-width: 1440px) {
+                                        position: relative;
+                                        left: 0;
+                                        top: 0px;
+                                        // width: 540px;
+                                        min-height: 100%;
+                                        display: block;
+                                        opacity: 1;
+                                        gap: 5px;
+                                        background: $blue2;
+                                        align-items: flex-start !important;
+    
+                                        li{
+                                            padding: 0;
+                                        }
+                                        &.open{
+                                            position: relative;
+                                            left: 0;
+                                            top: 0px;
+                                            // width: 540px;
+                                            min-height: 100%;
+                                            display: block;
+                                            opacity: 1;
+                                            gap: 5px;
+                                            background: $blue2;
+                                        }
+                                    }
+                                }
+
+                                
+                                &:has(>ul){
+
+                                    & > a{
+                                        margin-left: 25px;
+                                        padding: 0;
+                            
+                                        @media (max-width: 1440px) {
+                                            margin-left: 0;
+                                        }
+                                    }
+                            
+                                }
+
+                                &:has(>ul) > a:after {
+                                    content: "◂";
+                                    opacity: 1;
+                                    color: #fff;
+                                    transform: translateY(-49%) rotate(360deg) translateX(-14%) !important;
+                                    // transition: all 0.2s;
+                                    right: auto;
+                                    left: -15px;
+                                    // transition: all 0.2s;
+                                }
+                            }
+                        }
+                    }
+            
+                    &:hover {
+                        ul {
+                            padding: 20px 0 20px 0;
+                            display: flex;
+                            height: auto;
+            
+                            @media (max-width: 1440px) {
+                                position: relative;
+                                display: block;
+                                padding: 0 20px;
+                                max-width: 475px;
+                                width: 100%;
+                            }
+                        }
+
+                        a{
+                            &:after{
+                                transform: translateY(-35%) rotate(180deg);
+                                transition: all 0.2s;
+                            }
+                        }
+                    }
+            
+                    @media (max-width: 1440px) {
+                        ul {
+                            padding: 20px 0 20px 0;
+                            display: flex;
+                            height: auto;
+                            background: $blue;
+                            position: relative;
+                            display: block;
+                            padding: 0 20px;
+                            max-width: 100%;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+
+            @media( max-width: 1440px ) {
+                padding: 10px 20px;
+                position: fixed;
+                right: 0;
+                top: 0;
+                background: $blue2;
+                z-index: 10;
+                min-height: 100vh;
+                max-width:475px;
+                width: 100%;
+                box-shadow: 0 0 0.5em rgba(#222, 0.3);
+                transition: all 0.4s;
+                transform: translateX(475px);
+                height: 100%;
+                overflow-y: scroll;
+
+                &:hover{
+                     max-width:475px;
+                }
+                
+                ul {
+                    flex-direction: column;
+
+                    li {
+                        padding: 5px 0px;
+                        a{
+                            color: #fff;
+                        }
+                    }
+                }
+
+                &.show {
+                    transform: translateX(0px);
+                }
+            }
+
+            // @media( max-width: 1024px ) {
+            //     max-width: 475px;
+            //     width: 100%;
+            // }
+        }
+
+        .nav-btn {
+            padding: 5px;
+            color: $green;
+            display: none;
+
+            @media( max-width: 1440px ) {
+                display: block;
+            }
+
+            svg {
+                width: 30px;
+            }
+        }
+    }
+}
+
+.menu-menu-principal-container{
+    width: 100% !important;
+}
