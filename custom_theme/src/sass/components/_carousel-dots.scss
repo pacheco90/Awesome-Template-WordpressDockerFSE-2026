@@ -1,0 +1,134 @@
+
+.carousel-dots {
+    line-height: 0;
+    position: relative;
+    overflow: hidden;
+
+    .slider3 {
+        z-index: 1;
+        position: relative;
+        background: #efefef;
+
+        .item {
+            width: 100%;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .slick-slide {
+            line-height: 0;
+        }
+
+        .slick-dots {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            justify-content: center;
+            align-items: center;
+
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+
+            @media(max-width: 768px) {
+                bottom: 10px;
+            }
+
+            li {
+                width: 15px;
+                height: 15px;
+                margin: 0 6px;
+                position: relative;
+                cursor: pointer;
+
+                @media(max-width: 768px) {
+                    width: 12px;
+                    height: 12px;
+                    margin: 0 4px;
+                }
+
+                button {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    padding: 0;
+                    border: 0;
+                    border-radius: 50%;
+                    background: $gray;
+                    font-size: 0;
+                    cursor: pointer;
+                    transition: all 0.3s;
+
+                    &:before {
+                        display: none;
+                    }
+                }
+
+                &.slick-active {
+                    button {
+                        background: $blue;
+                    }
+                }
+            }
+        }
+    }
+
+    .arrow {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        z-index: 2;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 20px;
+        border: 0;
+        background: transparent;
+        color: $blue;
+        cursor: pointer;
+
+        @media(max-width: 768px) {
+            padding: 10px;
+        }
+
+        &.right3 {
+            left: auto;
+            right: 0;
+        }
+
+        svg {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s;
+
+            @media(max-width: 768px) {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        &:hover {
+            &.left3 {
+                svg {
+                    transform: translateX(-10px);
+                }
+            }
+
+            &.right3 {
+                svg {
+                    transform: translateX(10px);
+                }
+            }
+        }
+    }
+}

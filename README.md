@@ -36,6 +36,10 @@ You can do that from phpMyAdmin in the URL:
 http://localhost:8081/
 ```
 
+## Note
+If you want to import a sample database, you can use the database file located in the requirements folder. user:admin, password:admin for access wordpress
+
+
 To enter the website use the URL:
 
 ```text
@@ -196,6 +200,9 @@ Puedes hacerlo desde phpMyAdmin en la URL:
 ```text
 http://localhost:8081/
 ```
+
+## Nota
+Si deseas importar una base de datos de ejemplo, puedes utilizar el archivo de base de datos que se encuentra en la carpeta requirements. usuario:admin, contraseña:admin para el acceso a wordpress
 
 Para ingresar al sitio web utiliza la URL:
 

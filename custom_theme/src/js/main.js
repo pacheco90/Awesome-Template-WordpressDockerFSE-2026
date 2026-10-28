@@ -4,6 +4,8 @@ import 'dropkickjs/dist/dropkick.js';
 import AOS from 'aos/dist/aos.js';
 import jarallax from 'jarallax/dist/jarallax.js';
 
+$ = jQuery;
+
 const navigator = document.querySelector("nav");
 const navbtn = document.querySelector('.nav-btn');
 const close = document.querySelector(".close-menu"); 
@@ -64,3 +66,28 @@ AOS.init({
 });
 
 jarallax(document.querySelectorAll('[data-jarallax]'));
+
+
+
+$('.carousel-dots').each(function() {
+
+  const carousel = $(this);
+  const slider = carousel.find('.slider3');
+
+  slider.slick({
+      dots: true,
+      arrows: false,
+      autoplay: true,
+      autoplaySpeed: 4000,
+      adaptiveHeight: true
+  });
+
+  carousel.find('.left3').click(function() {
+      slider.slick('slickPrev');
+  });
+
+  carousel.find('.right3').click(function() {
+      slider.slick('slickNext');
+  });
+
+});

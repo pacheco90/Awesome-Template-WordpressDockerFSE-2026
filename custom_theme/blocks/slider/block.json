@@ -1,0 +1,22 @@
+{
+    "apiVersion": 2,
+    "name": "acf/slider",
+    "title": "Slider",
+    "description": "Slider de imágenes para las páginas del sitio",
+    "category": "design",
+    "icon": "images-alt2",
+    "keywords": [
+        "slider",
+        "carousel",
+        "imagenes"
+    ],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "render.php"
+    },
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "multiple": true
+    }
+}
