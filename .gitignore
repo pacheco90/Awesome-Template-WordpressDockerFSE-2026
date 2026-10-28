@@ -1,3 +1,6 @@
 custom_theme/node_modules
 mysql
 src-wordpress
+.DS_Store
+custom_theme/.DS_Store
+requirements/.DS_Store
