@@ -139,7 +139,26 @@ Some theme elements depend on ACF fields and may crash or show errors if the plu
 
 Enjoy editing :)
 
+## Screenshots
 
+<table>
+  <tr>
+    <th>ACF Configuration</th>
+    <th>Gutenberg Editor</th>
+  </tr>
+  <tr>
+    <td>
+      <img src="screenshots/ACFConf.png"
+           alt="ACF Configuration"
+           width="450">
+    </td>
+    <td>
+      <img src="screenshots/GutembergConf.png"
+           alt="Gutenberg Editor"
+           width="450">
+    </td>
+  </tr>
+</table>
 ---
 
 # Instrucciones en Español
@@ -280,3 +299,24 @@ Algunos elementos del tema dependen de los campos de ACF y pueden fallar o mostr
 
 
 ¡Disfruta editando! :)
+
+## Screenshots
+
+<table>
+  <tr>
+    <th>ACF Configuration</th>
+    <th>Gutenberg Editor</th>
+  </tr>
+  <tr>
+    <td>
+      <img src="screenshots/ACFConf.png"
+           alt="ACF Configuration"
+           width="450">
+    </td>
+    <td>
+      <img src="screenshots/GutembergConf.png"
+           alt="Gutenberg Editor"
+           width="450">
+    </td>
+  </tr>
+</table>
